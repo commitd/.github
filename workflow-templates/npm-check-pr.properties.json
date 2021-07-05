@@ -1,0 +1,7 @@
+{
+  "name": "Committed - Check PR",
+  "description": "Check a pull request in npm project.",
+  "iconName": "committed-logo",
+  "categories": ["TypeScript", "JavaScript"],
+  "filePatterns": ["package.json$"]
+}

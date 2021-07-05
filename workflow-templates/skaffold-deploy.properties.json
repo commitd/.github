@@ -1,0 +1,7 @@
+{
+  "name": "Committed - Skaffold deployment",
+  "description": "Deloy to Azure K8S with Skaffold",
+  "iconName": "committed-logo",
+  "categories": ["YAML"],
+  "filePatterns": ["skaffold.yml$"]
+}

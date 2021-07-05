@@ -1,0 +1,7 @@
+{
+  "name": "Committed - Check default branch",
+  "description": "Check the main branch in npm project.",
+  "iconName": "committed-logo",
+  "categories": ["TypeScript", "JavaScript"],
+  "filePatterns": ["package.json$"]
+}

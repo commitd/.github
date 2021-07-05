@@ -1,0 +1,7 @@
+{
+  "name": "Build Committed Doc Site",
+  "description": "Build Committed Docs Site.",
+  "iconName": "committed-logo",
+  "categories": ["Markdown"],
+  "filePatterns": ["package.json$", "gatsby-config.js$", "/docs/.*\\.md$"]
+}

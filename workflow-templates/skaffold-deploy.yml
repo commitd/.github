@@ -1,0 +1,44 @@
+name: Deploy with Skaffold
+
+on:
+  release:
+    types: [created]
+
+env:
+  NAMESPACE: release-${{ github.event.repository.name }}
+  SKAFFOLD_VERSION: latest
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # Actually we don't need NodeJS to use skaffold
+
+      # Connect to Azure Container Registry (ACR)
+      - uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.COMMITTED_ACR_URL }}
+          username: ${{ secrets.COMMITTED_ACR_USERNAME }}
+          password: ${{ secrets.COMMITTED_ACR_PASSWORD }}
+
+      # Set the target Azure Kubernetes Service (AKS) cluster.
+      - uses: azure/aks-set-context@v1
+        with:
+          creds: "${{ secrets.DEVK8S_CREDENTIALS }}"
+          cluster-name: ${{ secrets.DEVK8S_NAME }}
+          resource-group: ${{ secrets.DEVK8S_RESOURCE_GROUP }}
+
+      - name: Create namespace
+        run: kubectl create namespace ${{ env.NAMESPACE }} --dry-run -o json | kubectl apply -f -
+
+      - name: Deploy with skaffold
+        run: |
+          curl -sLo skaffold https://storage.googleapis.com/skaffold/releases/${{ env.SKAFFOLD_VERSION }}/skaffold-linux-amd64
+          chmod +x skaffold
+          ./skaffold version
+          ./skaffold run --namespace="${{ env.NAMESPACE }}" --default-repo="${{ secrets.COMMITTED_ACR_URL }}" --label="skaffold.dev/run-id=cd"
