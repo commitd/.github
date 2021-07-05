@@ -11,10 +11,8 @@ It contains our:
 - [Support offering](https://github.com/commitd/.github/blob/main/SUPPORT.md).
 - [Security approach](https://github.com/commitd/.github/blob/main/SECURITY.md).
 
-As well as our:
+As well as:
 
 - [Issue templates](https://github.com/commitd/.github/blob/main/.github/ISSUE_TEMPLATES)
 - [Pull request template](https://github.com/commitd/.github/blob/main/.github/PULL_REQUEST_TEMPLATE)
-- Github Workflows
-
-
+- [Github Workflow Templates](https://github.com/commitd/.github/blob/main/workflow-templates)

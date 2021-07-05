@@ -9,11 +9,8 @@
 
 **Which issue (if any) does this pull request address?**
 
-Fixes 
+Fixes
 
 **What changes did you make?**
 
-
-
 **Is there anything you'd like reviewers to focus on?**
-

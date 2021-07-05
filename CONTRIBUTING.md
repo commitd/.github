@@ -10,7 +10,7 @@ This makes it much easier to track who is doing what, and what is to come.
 
 ### Creating issues
 
-When creating an issue, clarify exactly what it is you want to add or solve, and if you have any, add initial implementation ideas. 
+When creating an issue, clarify exactly what it is you want to add or solve, and if you have any, add initial implementation ideas.
 
 If you know of any, reference useful resources (blog posts, documentation, existing classes to be modified etc) in the issue.
 
@@ -48,7 +48,7 @@ Use a naming convention to explicitly categorize your PR, so a reviewer can gaug
 
 `FAST_FOLLOW/FF` for changes coming from another PR review, see below for details.
 
-`ISSUE/DEV/FEATURE` for larger changes that will likely require more carful review. 
+`ISSUE/DEV/FEATURE` for larger changes that will likely require more carful review.
 
 Where appropriate, don't forget to reference the issue number. Use `Closes #issue_number` or `Fixes #issue_number` to close the ticket on merge. Use `See #issue_number` to reference the issue, without closing it
 
@@ -76,7 +76,7 @@ Refactors don't need a review if tested! If the code was covered and the refacto
 
 ## Adding scripts
 
-Scripts (usually Bash) should be added for repetitive tasks (for example, if files need downloading, setup commands need running). When adding bash scripts, use [Shellcheck](https://www.shellcheck.net/) for static analysis. 
+Scripts (usually Bash) should be added for repetitive tasks (for example, if files need downloading, setup commands need running). When adding bash scripts, use [Shellcheck](https://www.shellcheck.net/) for static analysis.
 
 If your script needs lots of environment variables to be set, or requires many arguments, consider using a `.env` file. Be careful not to add sensitive information (API keys for example) to source control. Consider using an example env file for people to copy from.
 
